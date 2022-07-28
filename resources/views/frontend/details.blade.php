@@ -39,24 +39,24 @@
                         </p>
                         <div class="gallery">
                             <div class="xzoom-container">
-                                <img class="xzoom" id="xzoom-default" src="frontend/images/details-1.jpg"
-                                    xoriginal="frontend/images/details-1.jpg" />
+                                <img class="xzoom" id="xzoom-default" src="{{asset('frontend/images/details-1.jpg')}}"
+                                    xoriginal="{{asset('frontend/images/details-1.jpg')}}" />
                                 <div class="xzoom-thumbs">
-                                    <a href="frontend/images/details-1.jpg"><img class="xzoom-gallery" width="128"
-                                            src="frontend/images/details-1.jpg"
-                                            xpreview="frontend/images/details-1.jpg" /></a>
-                                    <a href="frontend/images/details-1.jpg"><img class="xzoom-gallery" width="128"
-                                            src="frontend/images/details-1.jpg"
-                                            xpreview="frontend/images/details-1.jpg" /></a>
-                                    <a href="frontend/images/details-1.jpg"><img class="xzoom-gallery" width="128"
-                                            src="frontend/images/details-1.jpg"
-                                            xpreview="frontend/images/details-1.jpg" /></a>
-                                    <a href="frontend/images/details-1.jpg"><img class="xzoom-gallery" width="128"
-                                            src="frontend/images/details-1.jpg"
-                                            xpreview="frontend/images/details-1.jpg" /></a>
-                                    <a href="frontend/images/details-1.jpg"><img class="xzoom-gallery" width="128"
-                                            src="frontend/images/details-1.jpg"
-                                            xpreview="frontend/images/details-1.jpg" /></a>
+                                    <a href="{{asset('frontend/images/details-1.jpg')}}"><img class="xzoom-gallery" width="128"
+                                            src="{{asset('frontend/images/details-1.jpg')}}"
+                                            xpreview="{{asset('frontend/images/details-1.jpg')}}" /></a>
+                                    <a href="{{asset('frontend/images/details-1.jpg')}}"><img class="xzoom-gallery" width="128"
+                                            src="{{asset('frontend/images/details-1.jpg')}}"
+                                            xpreview="{{asset('frontend/images/details-1.jpg')}}" /></a>
+                                    <a href="{{asset('frontend/images/details-1.jpg')}}"><img class="xzoom-gallery" width="128"
+                                            src="{{asset('frontend/images/details-1.jpg')}}"
+                                            xpreview="{{asset('frontend/images/details-1.jpg')}}" /></a>
+                                    <a href="{{asset('frontend/images/details-1.jpg')}}"><img class="xzoom-gallery" width="128"
+                                            src="{{asset('frontend/images/details-1.jpg')}}"
+                                            xpreview="{{asset('frontend/images/details-1.jpg')}}" /></a>
+                                    <a href="{{asset('frontend/images/details-1.jpg')}}"><img class="xzoom-gallery" width="128"
+                                            src="{{asset('frontend/images/details-1.jpg')}}"
+                                            xpreview="{{asset('frontend/images/details-1.jpg')}}" /></a>
                                 </div>
                             </div>
                             <h2>About</h2>
@@ -127,7 +127,7 @@
                         </table>
                     </div>
                     <div class="join-container">
-                        <a href="checkout.html" class="btn btn-block btn-join-now mt-3 py-2">Join Now</a>
+                        <a href="{{route('checkout-success')}}" class="btn btn-block btn-join-now mt-3 py-2">Join Now</a>
                     </div>
                 </div>
             </div>

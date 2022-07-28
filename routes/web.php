@@ -27,6 +27,8 @@ Route::get('/detail', [DetailController::class, 'index'])->name('detail');
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
+Route::get('/success', [CheckoutController::class, 'success'])->name('checkout-success');
+
 
 // admin:admin -> adalah merupakan middleware
 Route::group(['prefix' => 'admin', 'middleware' => ['admin:admin']], function () {

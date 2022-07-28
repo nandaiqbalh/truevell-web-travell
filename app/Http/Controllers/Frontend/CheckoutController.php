@@ -11,4 +11,9 @@ class CheckoutController extends Controller
     {
         return view('frontend.checkout');
     }
+
+    public function success()
+    {
+        return view('frontend.checkout_success');
+    }
 }
