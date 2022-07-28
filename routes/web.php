@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Backend\ProfileVillageController;
 use App\Http\Controllers\Backend\ProgramCategoryController;
 use App\Http\Controllers\Backend\ProgramController;
+use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/detail', [DetailController::class, 'index'])->name('detail');
 
 // admin:admin -> adalah merupakan middleware
 Route::group(['prefix' => 'admin', 'middleware' => ['admin:admin']], function () {

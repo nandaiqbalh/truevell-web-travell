@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-Truevell
+    Truevell
+@endsection
+
+@section('navbar')
+    @include('frontend.body.navbar_home')
 @endsection
 
 @section('content')
