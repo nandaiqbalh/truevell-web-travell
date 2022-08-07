@@ -27,13 +27,13 @@
 			<span>Dashboard</span>
           </a>
         </li>
-{{--
-        <li class="{{($route == 'profiles.index') ? 'active' : ''}}">
-            <a href="{{route('profiles.index')}}">
+
+        <li class="{{($route == 'travel-packages.index') || ($route == 'travel-packages.show') || ($route == 'travel-packages.edit') || ($route == 'travel-packages.create') ? 'active' : ''}}">
+            <a href="{{route('travel-packages.index')}}">
             <i data-feather="zap"></i>
-			<span>Village Profile</span>
+			<span>Travel Package</span>
           </a>
-        </li> --}}
+        </li>
 
         {{-- <li class="treeview {{($prefix == '/admin/programs')?'active' : ''}}" >
             <a href="#">

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\TravelPackageRequest;
+use App\Models\TravelPackage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TravelPackageController extends Controller
 {
@@ -14,7 +17,11 @@ class TravelPackageController extends Controller
      */
     public function index()
     {
-        //
+        $travel_packages = TravelPackage::paginate(10);
+
+        return view('backend.travel-package.index', [
+            'travel_packages' => $travel_packages,
+        ]);
     }
 
     /**
@@ -24,7 +31,7 @@ class TravelPackageController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.travel-package.create');
     }
 
     /**
@@ -33,9 +40,19 @@ class TravelPackageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TravelPackageRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        TravelPackage::create($data);
+
+        $notification = array(
+            'message' => 'Succeeded to Create Travel Package!',
+            'alert-type' => 'success'
+        );
+
+        return Redirect()->route('travel-packages.index')->with($notification);
     }
 
     /**
@@ -57,7 +74,9 @@ class TravelPackageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = TravelPackage::findOrFail($id);
+
+        return view('backend.travel-package.edit', compact('item'));
     }
 
     /**
