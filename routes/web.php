@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Backend\ProfileVillageController;
 use App\Http\Controllers\Backend\ProgramCategoryController;
 use App\Http\Controllers\Backend\ProgramController;
+use App\Http\Controllers\Backend\TravelPackageController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -49,6 +50,8 @@ Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
     // password
     Route::get('/change/password', [AdminProfileController::class, 'adminChangePassword'])->name('admin.change.password');
     Route::post('/update/password', [AdminProfileController::class, 'adminUpdatePassword'])->name('admin.update.password');
+
+    Route::resource('/travel-packages', TravelPackageController::class);
 }); // END MIDDLEWARE
 
 
