@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\ProfileVillageController;
 use App\Http\Controllers\Backend\ProgramCategoryController;
 use App\Http\Controllers\Backend\ProgramController;
@@ -52,6 +53,8 @@ Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
     Route::post('/update/password', [AdminProfileController::class, 'adminUpdatePassword'])->name('admin.update.password');
 
     Route::resource('/travel-packages', TravelPackageController::class);
+
+    Route::resource('/galleries', GalleryController::class);
 }); // END MIDDLEWARE
 
 

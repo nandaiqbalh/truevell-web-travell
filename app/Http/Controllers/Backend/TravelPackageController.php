@@ -90,6 +90,7 @@ class TravelPackageController extends Controller
     {
 
         $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
 
         $travelPackage->update($data);
 

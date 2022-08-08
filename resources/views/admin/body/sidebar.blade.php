@@ -35,6 +35,13 @@
           </a>
         </li>
 
+        <li class="{{($route == 'galleries.index') || ($route == 'galleries.show') || ($route == 'galleries.edit') || ($route == 'galleries.create') ? 'active' : ''}}">
+            <a href="{{route('galleries.index')}}">
+            <i data-feather="server"></i>
+			<span>Gallery</span>
+          </a>
+        </li>
+
         {{-- <li class="treeview {{($prefix == '/admin/programs')?'active' : ''}}" >
             <a href="#">
               <i data-feather="server"></i>

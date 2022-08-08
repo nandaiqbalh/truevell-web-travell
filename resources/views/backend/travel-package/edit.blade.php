@@ -24,7 +24,7 @@
         <!-- Basic Forms -->
          <div class="box">
            <div class="box-header with-border">
-             <h4 class="box-title">Create Travel Package</h4>
+             <h4 class="box-title">Edit Travel Package</h4>
            </div>
            <!-- /.box-header -->
            <div class="box-body">
