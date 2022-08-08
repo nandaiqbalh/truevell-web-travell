@@ -48,7 +48,7 @@ class TravelPackageController extends Controller
         TravelPackage::create($data);
 
         $notification = array(
-            'message' => 'Succeeded to Create Travel Package!',
+            'message' => 'Create Travel Package Success!',
             'alert-type' => 'success'
         );
 
@@ -86,9 +86,18 @@ class TravelPackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TravelPackageRequest $request, TravelPackage $travelPackage)
     {
-        //
+
+        $data = $request->all();
+
+        $travelPackage->update($data);
+
+        $notification = array(
+            'message' => 'Update Travel Package Success!',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('travel-packages.index')->with($notification);
     }
 
     /**
@@ -97,8 +106,15 @@ class TravelPackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(TravelPackage $travelPackage)
     {
-        //
+
+        $travelPackage->delete();
+
+        $notification = array(
+            'message' => 'Delete Travel Package Success!',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
     }
 }
